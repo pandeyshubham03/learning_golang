@@ -4,8 +4,11 @@ func main() {
 	// var card string = "Ace of Spades"
 	cards := newDeck()
 	// card = "Five of Diamonds"
+	hand, remainingCards := deal(cards, 5)
 
-	cards.print()
+	hand.print()
+	remainingCards.print()
+
 }
 
 func newCard() string {
