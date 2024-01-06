@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type person struct {
 	// defining a struct
 	firstName string
@@ -7,6 +9,8 @@ type person struct {
 }
 
 func main() {
-	alex := person{firstName: "Alex", lastName: "Anderson"}
-
+	// alex := person{firstName: "Alex", lastName: "Anderson"}
+	// fmt.Println(alex)
+	var alex person
+	fmt.Println(alex)
 }
