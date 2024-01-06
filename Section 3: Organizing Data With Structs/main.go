@@ -36,8 +36,8 @@ func main() {
 		},
 	}
 
-	jimPointer := &jim
-	jimPointer.updateName("Jimmy")
+	// jimPointer := &jim
+	jim.updateName("Jimmy") // go can directly convert value to pointer automatically
 	jim.print()
 
 }
