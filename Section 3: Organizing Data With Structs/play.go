@@ -12,3 +12,5 @@ func main() {
 func updateSlice(s []string) {
 	s[0] = "Bye"
 }
+
+// We see that unlike structs the slice was modified automatically
