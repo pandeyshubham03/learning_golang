@@ -12,7 +12,7 @@ type person struct {
 	// defining a struct
 	firstName string
 	lastName  string
-	contact contactInfo
+	contact   contactInfo
 }
 
 func main() {
@@ -26,14 +26,18 @@ func main() {
 	// fmt.Println(alex)
 	// fmt.Printf("%+v", alex)
 
-	jim := person {
+	// embedding structs:
+	jim := person{
 		firstName: "Jim",
-		lastName: "Party",
-		contact: contactInfo {
-			email: "jim@gmail.com",
+		lastName:  "Party",
+		contact: contactInfo{
+			email:   "jim@gmail.com",
 			zipCode: 9400,
-		}
+		},
 	}
 
+}
 
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
