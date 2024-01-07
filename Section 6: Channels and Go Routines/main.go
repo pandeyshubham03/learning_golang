@@ -14,17 +14,23 @@ func main() {
 		"http://amazon.com",
 	}
 
+	c := make(chan string)
+
 	for _, link := range links {
-		go checkLink(link) // go keyword creates a new go routine to call the function often
+		go checkLink(link, c) // go keyword creates a new go routine to call the function often
 	}
+
+	fmt.Println(<-c)
 }
 
-func checkLink(link string) {
+func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
 		fmt.Println(link, "might be down!")
+		c <- "Might be down I think"
 		return
 	}
 
 	fmt.Println(link, "is up!")
+	c <- "Yep It's Up!"
 }
