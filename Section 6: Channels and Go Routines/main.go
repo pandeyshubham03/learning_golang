@@ -20,7 +20,9 @@ func main() {
 		go checkLink(link, c) // go keyword creates a new go routine to call the function often
 	}
 
-	fmt.Println(<-c)
+	for i := 0; i < len(links); i++ {
+		fmt.Println(<-c)
+	}
 }
 
 func checkLink(link string, c chan string) {
