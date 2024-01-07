@@ -15,7 +15,7 @@ func main() {
 	}
 
 	for _, link := range links {
-		checkLink(link)
+		go checkLink(link) // go keyword creates a new go routine to call the function often
 	}
 }
 
